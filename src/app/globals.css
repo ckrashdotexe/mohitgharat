@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #f0f0ef;
+  --accent: #facc15;
+  --accent-strong: #eab308;
+  --border: #e5e5e5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-inter), "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(250, 204, 21, 0.4);
+}
+
+.accent-gradient {
+  background: linear-gradient(120deg, var(--accent), #ffe88a);
+}
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+}
+
+.noise-bg {
+  position: relative;
+}
+
+.noise-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1' height='1' fill='rgba(0,0,0,0.05)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee {
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+
+.font-display {
+  font-family: var(--font-playfair), 'Playfair Display', serif;
+}
+

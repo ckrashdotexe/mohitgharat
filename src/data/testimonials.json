@@ -1,0 +1,26 @@
+[
+  {
+    "id": "testimonial-aisha",
+    "name": "Aisha Sharma",
+    "brand": "Indigo Music",
+    "title": "Creative Director",
+    "quote": "Mohit has a rare instinct for light. Every frame feels intentional yet effortless, which is why we trust him with our flagship campaigns.",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=256&q=80"
+  },
+  {
+    "id": "testimonial-rahul",
+    "name": "Rahul Verma",
+    "brand": "Vista Airways",
+    "title": "Head of Brand",
+    "quote": "From aerial moves to macro textures, Mohit and his team delivered a luxurious film that pushed our brand perception globally.",
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=256&q=80"
+  },
+  {
+    "id": "testimonial-maya",
+    "name": "Maya Iyer",
+    "brand": "Aria Studios",
+    "title": "Producer",
+    "quote": "Working with Mohit means calm, precise communication and visuals that elevate the script beyond expectation.",
+    "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=256&q=80"
+  }
+]

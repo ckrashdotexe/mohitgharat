@@ -1,0 +1,38 @@
+[
+  {
+    "id": "netflix",
+    "name": "Netflix",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+    "url": "https://www.netflix.com"
+  },
+  {
+    "id": "dharma",
+    "name": "Dharma Productions",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/f/f9/Dharma_Productions_official_logo.png",
+    "url": "https://www.dharma-production.com"
+  },
+  {
+    "id": "swiggy",
+    "name": "Swiggy",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/12/Swiggy_logo.png",
+    "url": "https://www.swiggy.com"
+  },
+  {
+    "id": "redbull",
+    "name": "Red Bull",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fe/Red_Bull.svg/512px-Red_Bull.svg.png",
+    "url": "https://www.redbull.com"
+  },
+  {
+    "id": "globex",
+    "name": "Globex Studios",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/02/Warner_Bros._%282019%29_logo.svg",
+    "url": "https://www.warnerbros.com"
+  },
+  {
+    "id": "spotify",
+    "name": "Spotify",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg",
+    "url": "https://www.spotify.com"
+  }
+]
