@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { BrandLogos } from "@/components/BrandLogos";
 import { PortfolioReels } from "@/components/PortfolioReels";
 import { CinematicsGallery } from "@/components/CinematicsGallery";
 import { AboutSection } from "@/components/AboutSection";
@@ -25,10 +26,12 @@ const testimonials = testimonialsData as TestimonialItem[];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-[var(--background)] text-[var(--foreground)]">
+      
       <Navigation />
       <main className="mt-20 flex flex-col gap-0">
         <Hero />
+        <BrandLogos clients={clients} />
         <PortfolioReels items={portfolio} />
         <CinematicsGallery items={cinematics} />
         <AboutSection />

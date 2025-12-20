@@ -15,37 +15,51 @@ const sections = [
 ];
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
+  ;
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
     };
-  }, [isOpen]);
+  
+    window.addEventListener("keydown", onKeyDown);
+  
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
+  
 
-  const toggleMenu = () => setIsOpen((prev) => !prev);
-
-  const handleNavigate = (href: string) => {
-    const el = document.querySelector(href);
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth" });
+  function handleNavigate(href: string) {
+    const element = document.querySelector(href);
+  
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  
     setIsOpen(false);
-  };
+  }
+  
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4">
-      <div className="glass flex w-full max-w-6xl items-center justify-between rounded-full border border-white/60 px-6 py-3 shadow-lg">
+      <div className="glass flex w-full max-w-6xl items-center justify-between rounded-full border border-white/40 px-6 py-3 shadow-lg text-white">
         <a
           href="#home"
           className="text-xl font-semibold tracking-[0.4em]"
-          aria-label="Mohit Gharat logo"
+          aria-label="Frames by Mohit  logo"
         >
-          MG
+          FBM
         </a>
         <button
           onClick={toggleMenu}
-          className="group relative flex h-11 w-11 items-center justify-center rounded-full border border-black/10 transition hover:border-black/40"
+          className="group relative flex h-11 w-11 items-center justify-center rounded-full border border-white/40 transition hover:border-white/70"
           aria-expanded={isOpen}
           aria-controls="nav-overlay"
           aria-label="Toggle navigation"
@@ -56,7 +70,7 @@ export function Navigation() {
               <span
                 key={line}
                 className={clsx(
-                  "block h-0.5 w-5 origin-center bg-black transition-transform duration-300 ease-out",
+                  "block h-0.5 w-5 origin-center bg-white transition-transform duration-300 ease-out",
                   line === 0 && isOpen && "translate-y-1.5 rotate-45",
                   line === 1 && isOpen && "opacity-0",
                   line === 2 && isOpen && "-translate-y-1.5 -rotate-45",
@@ -75,12 +89,16 @@ export function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+
           >
             <motion.div
               className="flex w-full max-w-4xl flex-col gap-6 text-white"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+
             >
               <p className="text-sm uppercase tracking-[0.4em] text-white/70">
                 Navigate
@@ -106,9 +124,9 @@ export function Navigation() {
               </nav>
               <div className="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                 <a href="mailto:hello@mohitghar.at" className="hover:text-white">
-                  hello@mohitghar.at
+                  mohitgharat@gmail.com
                 </a>
-                <span>+91 98200 12345</span>
+                <span>+91 8208447080</span>
                 <span>Mumbai, India</span>
               </div>
             </motion.div>

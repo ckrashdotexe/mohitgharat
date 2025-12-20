@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://mohitghar.at"),
   title: {
-    default: "Mohit Gharat — Cinematographer",
+    default: "Frames by Mohit",
     template: "%s | Mohit Gharat",
   },
   description:
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+        url: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80https://unsplash.com/photos/a-couple-of-men-standing-next-to-each-other-aJo_DOTMQTA",
         width: 1600,
         height: 900,
         alt: "Cinematic frame by Mohit Gharat",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohit Gharat — Cinematographer",
+    title: "Mohit Gharat ",
     description:
       "Visual storytelling through films, commercials, and music videos.",
     images: [
@@ -66,7 +66,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} bg-white text-black antialiased`}
+     className={`${inter.variable} ${playfair.variable} bg-[var(--background)] text-[var(--foreground)] antialiased`}
+
       >
         {children}
       </body>

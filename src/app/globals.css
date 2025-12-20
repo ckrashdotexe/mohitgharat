@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
+  --background: #000000;
+  --foreground: #ffffff;
   --muted: #f0f0ef;
   --accent: #facc15;
   --accent-strong: #eab308;
@@ -18,6 +18,7 @@
 
 body {
   margin: 0;
+
   font-family: var(--font-inter), "Inter", "Helvetica Neue", Arial, sans-serif;
   background: var(--background);
   color: var(--foreground);
@@ -33,9 +34,10 @@ body {
 }
 
 .glass {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(16px);
 }
+
 
 .noise-bg {
   position: relative;
@@ -58,6 +60,16 @@ body {
 .marquee {
   width: max-content;
   animation: marquee 28s linear infinite;
+}
+
+.marquee-horizontal {
+  width: max-content;
+  animation: marquee-horizontal 60s linear infinite;
+}
+
+@keyframes marquee-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 

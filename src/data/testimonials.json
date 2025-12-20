@@ -1,19 +1,27 @@
 [
   {
-    "id": "testimonial-aisha",
-    "name": "Aisha Sharma",
-    "brand": "Indigo Music",
+    "id": "testimonial-Akash",
+    "name": "Akash Surve",
+    "brand": "Oreo One Agency",
     "title": "Creative Director",
-    "quote": "Mohit has a rare instinct for light. Every frame feels intentional yet effortless, which is why we trust him with our flagship campaigns.",
+    "quote": "certainly!, I really like your attitude towards work. It's always fun and exciting to work with the right kind of energy and mindset.",
     "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=256&q=80"
   },
   {
-    "id": "testimonial-rahul",
-    "name": "Rahul Verma",
-    "brand": "Vista Airways",
-    "title": "Head of Brand",
-    "quote": "From aerial moves to macro textures, Mohit and his team delivered a luxurious film that pushed our brand perception globally.",
+    "id": "testimonial-Alisha Mehta ",
+    "name": "Alisha Mehta",
+    "brand": "Huffing paint",
+    "title": "Founder",
+    "quote": "Mohit is an excellent person to work with, in addition to his amazing skills. He understands versatile work quickly and seamlessly executes the job at hand, and it has been more than 2 years i've been working with himbeen relying on him for my shootsbecause he undertstands the value of quality and hardwork, which is what makes him different and one of the best in the field. 10/10 recommended! .",
     "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=256&q=80"
+  },
+  {
+    "id": "testimonial-cin-cin",
+    "name": "",
+    "brand": "Cin Cin",
+    "title": "Producer",
+    "quote": "It's.been an absolute pleasure working with Mohit! In jusr a month, we've already colloborated on three major events and definately see ourseleves partnering with him on future projects as well. he's been extremly receptive to our requirements and feedback, and that reflects clearly in the quality of work delivered ",
+    "avatar": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=256&q=80"
   },
   {
     "id": "testimonial-maya",
