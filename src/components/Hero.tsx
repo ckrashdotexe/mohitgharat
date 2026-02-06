@@ -37,7 +37,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Frames By Mohit 
+          FRAMES BY MOHIT 
         </motion.h1>
         <motion.p
           className="mt-6 max-w-2xl text-base text-white/80 sm:text-lg"

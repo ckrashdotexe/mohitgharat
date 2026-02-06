@@ -1,0 +1,156 @@
+/* ... Previous styles from the first response ... */
+
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 19 / 6;
+  margin: 0 auto;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  z-index: 10000;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .video-modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* Use standard mobile ratio on small screens */
+  }
+
+  .close-btn {
+    top: -35px;
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-modal {
+    padding: 5px;
+  }
+
+  .modal-content {
+    aspect-ratio: 16 / 9;
+  }
+
+  .close-btn {
+    top: -30px;
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.play-icon {
+  width: 70px;
+  height: 70px;
+  border: 3px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover .play-icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+/* This controls the physical shape of the reel */
+.swiper-slide {
+    width: 300px !important;      /* Vertical "Reel" width */
+    height: 533px !important;     /* 9:16 Aspect Ratio height */
+    background: #000;
+    border-radius: 20px;
+    overflow: visible;            /* REQUIRED to see the reflection below */
+    position: relative;
+    
+    /* Synergyy Media Reflection Effect */
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent 75%, rgba(255, 255, 255, 0.1));
+  }
+  
+  /* This controls the dark gradient and text at the bottom of the reel */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    /* Creates a smooth dark fade from the bottom up */
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 30%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;    /* Pushes text to the bottom of the card */
+    align-items: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    pointer-events: none;         /* Ensures clicks pass through to the slide */
+  }
+  
+  /* The Client and Title text styling */
+  .text-content {
+    text-align: center;
+  }
+  
+  .client-name {
+    color: #c5a059;               
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+  .project-title {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }

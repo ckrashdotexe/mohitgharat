@@ -1,101 +1,95 @@
 "use client";
 
+import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import Image from "next/image";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import type { CinematicItem } from "../types/content";
 
-type CinematicsGalleryProps = {
-  items: CinematicItem[];
-};
+// Import Swiper requirements
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
-export function CinematicsGallery({ items: baseItems }: CinematicsGalleryProps) {
-  const [selected, setSelected] = useState<CinematicItem | null>(null);
-  // Double the items for seamless infinite scroll
-  const duplicatedItems = [...baseItems, ...baseItems];
+import './CinematicsGallery.css';
+
+interface CinematicItem {
+  id: string;
+  title: string;
+  videoId: string;
+  src: string;      // Thumbnail image URL
+  client?: string;
+  camera?: string;
+}
+
+export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+
+  const closeModal = () => setActiveVideoId(null);
 
   return (
-    <section id="cinematics" className="bg-black px-4 py-12 text-white sm:px-8 lg:px-16">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 text-center">
-        <p className="text-sm uppercase tracking-[0.4em] text-[#FACC15]">
-          Cinematics
-        </p>
-        <h2 className="font-display text-3xl sm:text-4xl">
-          Infinite still gallery
-        </h2>
-        <p className="text-lg text-white/70">
-          High-resolution frames curated from narrative, commercial, and
-          documentary work. Scroll endlessly to explore light, texture, and
-          composition studies.
-        </p>
+    <section id="cinematics" className="cinematics-wrapper">
+      <div className="cinematic-header">
+        <p className="cinematic-subtitle">Cinematography</p>
+        <h2 className="cinematic-title">Cinematic Works</h2>
       </div>
 
-      <div className="mt-8 overflow-hidden">
-        <div className="marquee-horizontal flex items-center gap-6">
-          {duplicatedItems.map((item, index) => (
-            <button
-              key={`${item.id}-${index}`}
-              className="group relative flex-shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-md transition hover:-translate-y-1 hover:shadow-xl"
-              onClick={() => setSelected(item)}
-            >
-              <div className="relative aspect-[4/5] w-64 sm:w-80">
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 768px) 256px, 320px"
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex flex-col gap-1 border-t border-white/10 px-4 py-4 text-left">
-                <div className="flex items-center justify-between text-sm text-white/70">
-                  <span>{item.location}</span>
-                  <span>{item.camera}</span>
+      <div className="swiper-container-wrapper">
+      <Swiper
+          modules={[Navigation, Pagination, Autoplay]} // Remove EffectFade if you want side-by-side
+          spaceBetween={30}       // Adds a 30px gap between slides to prevent overlapping
+          slidesPerView={1}       // Show only 1 video at a time for 16:9 cinematic
+          centeredSlides={true}   // Centers the active video
+          loop={true}             // Keeps the infinite scroll working
+          className="cinematic-swiper"
+   >
+          {items.map((item) => (
+            <SwiperSlide key={item.id}>
+              <div className="video-frame-16-9" onClick={() => setActiveVideoId(item.videoId)}>
+                <div className="group relative h-full w-full cursor-pointer">
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    priority
+                  />
+                  
+                  {/* Cinematic Play Overlay */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 transition-colors group-hover:bg-black/50">
+                    <div className="play-ring">
+                      <div className="play-triangle-icon"></div>
+                    </div>
+                    
+                    <div className="video-bottom-info">
+                      <p className="client-tag">{item.client}</p>
+                      <h3 className="project-name">{item.title}</h3>
+                      <p className="tech-specs">{item.camera}</p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-lg font-semibold">{item.title}</p>
               </div>
-            </button>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
 
-      <AnimatePresence>
-        {selected && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelected(null)}
-          >
-            <motion.div
-              className="relative w-full max-w-3xl overflow-hidden rounded-3xl bg-black"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <Image
-                src={selected.src}
-                alt={selected.title}
-                width={1600}
-                height={1000}
-                className="h-auto w-full object-cover"
-                priority
-              />
-              <div className="flex flex-col gap-1 border-t border-white/10 px-6 py-4 text-white">
-                <p className="text-sm uppercase tracking-[0.3em] text-[#FACC15]">
-                  {selected.location}
-                </p>
-                <h3 className="text-2xl font-semibold">{selected.title}</h3>
-                <p className="text-sm text-white/70">{selected.camera}</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Centered Video Modal Popup */}
+      {activeVideoId && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-inner" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-x" onClick={closeModal}>&times;</button>
+            <div className="modal-video-container">
+              <iframe
+                src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=1&rel=0&modestbranding=1`}
+                title="Cinematic Player"
+                allow="autoplay; encrypted-media; fullscreen"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
-
