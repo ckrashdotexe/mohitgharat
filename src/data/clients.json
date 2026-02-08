@@ -1,9 +1,9 @@
 [
   {
-    "id": "netflix",
-    "name": "Netflix",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-    "url": "https://www.netflix.com"
+    "id": "floradecana",
+    "name": "FloradeCana",
+    "logo": "/logo/1.png",
+    "url": "https://www.floradecana.com"
   },
   {
     "id": "dharma",

@@ -1,3 +1,4 @@
+4
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Bebas_Neue } from "next/font/google";
 import "./globals.css";

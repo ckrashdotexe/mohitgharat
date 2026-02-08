@@ -1,6 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/free-mode";
 import type { ClientLogo } from "../types/content";
 
 type ClientsMarqueeProps = {
@@ -9,7 +13,6 @@ type ClientsMarqueeProps = {
 
 export function ClientsMarquee({ clients }: ClientsMarqueeProps) {
   const limited = clients.slice(0, 4);
-  const loopItems = [...limited, ...limited];
 
   return (
     <section
@@ -30,15 +33,30 @@ export function ClientsMarquee({ clients }: ClientsMarqueeProps) {
       </div>
 
       <div className="mt-8 overflow-hidden border-y border-white/10 py-6">
-        <div className="marquee-track">
-          <div className="marquee flex items-center gap-12">
-            {loopItems.map((client, index) => (
+        <Swiper
+          modules={[Autoplay, FreeMode]}
+          loop
+          freeMode
+          speed={3000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          allowTouchMove={false}
+          grabCursor={false}
+          slidesPerView="auto"
+          className="clients-marquee-swiper"
+        >
+          {limited.map((client) => (
+            <SwiperSlide
+              key={client.id}
+              className="!w-auto flex-shrink-0"
+            >
               <a
-                key={`${client.id}-${index}`}
                 href={client.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-20 w-32 flex-shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="group flex h-20 w-32 items-center justify-center rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <Image
                   src={client.logo}
@@ -49,11 +67,10 @@ export function ClientsMarquee({ clients }: ClientsMarqueeProps) {
                   loading="lazy"
                 />
               </a>
-            ))}
-          </div>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
 }
-

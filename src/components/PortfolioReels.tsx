@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Autoplay } from "swiper/modules";
+import { FreeMode, Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
+import "swiper/css/free-mode";
 import "./VideoGallery.css";
 import type { PortfolioItem } from "../types/content";
 
@@ -34,7 +34,6 @@ export const PortfolioReels: React.FC<PortfolioReelsProps> = ({ items }) => {
 
       <div className="reel-swiper-wrapper">
         <Swiper
-          effect="coverflow"
           grabCursor
           centeredSlides
           slidesPerView="auto"
@@ -44,18 +43,15 @@ export const PortfolioReels: React.FC<PortfolioReelsProps> = ({ items }) => {
           resistanceRatio={0.85}
           touchReleaseOnEdges
           watchSlidesProgress
-          coverflowEffect={{
-            rotate: 0,
-            stretch: -24,
-            depth: 200,
-            modifier: 1.1,
-            slideShadows: false,
+          freeMode={{
+            enabled: true,
+            sticky: false,
           }}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
           }}
-          modules={[EffectCoverflow, Autoplay]}
+          modules={[FreeMode, Autoplay]}
           className="reel-swiper"
         >
           {items.map((item) => (
