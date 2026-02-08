@@ -18,7 +18,7 @@ export function AboutSection() {
           <p className="text-sm uppercase tracking-[0.4em] text-[#FACC15]">
             About Mohit
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl">
+          <h2 className="section-heading text-3xl sm:text-4xl">
             Cinematographer from Mumbai
           </h2>
           <p className="text-lg text-white/70">I’m Mohit Gharat, a cinematographer driven by a single goal—bringing stories to life with compelling visuals.

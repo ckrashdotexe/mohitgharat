@@ -3,10 +3,10 @@
 import { FormEvent, useState } from "react";
 
 const socials = [
-  { label: "Instagram", url: "https://instagram.com/mohitgharat" },
-  { label: "Vimeo", url: "https://vimeo.com/mohitgharat" },
-  { label: "YouTube", url: "https://youtube.com/@mohitgharat" },
-  { label: "LinkedIn", url: "https://linkedin.com/in/mohitgharat" },
+  { label: "Instagram", url: "https://instagram.com/framesbymohit" },
+  
+  { label: "YouTube", url: "https://youtube.com/@framesbymohit" },
+  
 ];
 
 export function ContactSection() {
@@ -47,7 +47,7 @@ export function ContactSection() {
           <p className="text-sm uppercase tracking-[0.4em] text-[#FACC15]">
             Contact
           </p>
-          <h2 className="font-display text-3xl">Let's frame your next story</h2>
+          <h2 className="section-heading text-3xl">Let's frame your next story</h2>
           <p className="text-white/70">
             Share project details, schedules, or references. Mohit and team
             respond within 24 hours with availability and treatment ideas.
@@ -58,9 +58,9 @@ export function ContactSection() {
           <div className="space-y-6">
             <div className="space-y-2 text-sm text-white/80">
               <p>
-                Email: <a href="mailto:hello@mohitghar.at" className="underline">hello@mohitghar.at</a>
+                Email: <a href="mailto:framesbymohit@gmail.com" className="underline">framesbymohit@gmail.com</a>
               </p>
-              <p>Phone: +91 98200 12345</p>
+              <p>Phone: +91 9172398227</p>
              
             </div>
             <div className="flex flex-wrap gap-3 text-sm">

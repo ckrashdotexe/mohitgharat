@@ -9,13 +9,13 @@ type BrandLogosProps = {
 
 export function BrandLogos({ clients }: BrandLogosProps) {
   const limited = clients.slice(0, 4);
-  const doubled = [...limited, ...limited];
+  const loopItems = [...limited, ...limited];
 
   return (
     <section className="bg-black py-8">
       <div className="overflow-hidden border-y border-white/10">
         <div className="marquee flex items-center gap-12">
-          {doubled.map((client, index) => (
+          {loopItems.map((client, index) => (
             <a
               key={`${client.id}-${index}`}
               href={client.url}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,7 +9,14 @@ const inter = Inter({
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
+  weight: "700",
   variable: "--font-playfair",
+});
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas",
 });
 
 export const metadata: Metadata = {
@@ -66,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-     className={`${inter.variable} ${playfair.variable} bg-[var(--background)] text-[var(--foreground)] antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${bebasNeue.variable} bg-[var(--background)] text-[var(--foreground)] antialiased`}
 
       >
         {children}

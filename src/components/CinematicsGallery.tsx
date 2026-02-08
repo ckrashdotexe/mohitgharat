@@ -1,91 +1,121 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 import Image from "next/image";
-
-// Import Swiper requirements
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-
-import './CinematicsGallery.css';
-
-interface CinematicItem {
-  id: string;
-  title: string;
-  videoId: string;
-  src: string;      // Thumbnail image URL
-  client?: string;
-  camera?: string;
-}
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "./CinematicsGallery.css";
+import type { CinematicItem } from "../types/content";
 
 export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
-  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
-
-  const closeModal = () => setActiveVideoId(null);
+  const [selected, setSelected] = useState<CinematicItem | null>(null);
+  const closeLightbox = () => setSelected(null);
 
   return (
-    <section id="cinematics" className="cinematics-wrapper">
-      <div className="cinematic-header">
+    <section id="cinematics" className="cinematics-wrapper" aria-label="Cinematic works">
+      <div className="cinematic-section-header">
         <p className="cinematic-subtitle">Cinematography</p>
-        <h2 className="cinematic-title">Cinematic Works</h2>
+        <h2 className="section-heading cinematic-title">Cinematic Works</h2>
+        <p className="section-description cinematic-description">
+          High-resolution frames from narrative, commercial, and documentary work.
+        </p>
       </div>
 
-      <div className="swiper-container-wrapper">
-      <Swiper
-          modules={[Navigation, Pagination, Autoplay]} // Remove EffectFade if you want side-by-side
-          spaceBetween={30}       // Adds a 30px gap between slides to prevent overlapping
-          slidesPerView={1}       // Show only 1 video at a time for 16:9 cinematic
-          centeredSlides={true}   // Centers the active video
-          loop={true}             // Keeps the infinite scroll working
+      <div className="cinematic-swiper-wrapper">
+        <Swiper
+          effect="coverflow"
+          grabCursor
+          centeredSlides
+          slidesPerView="auto"
+          loop
+          loopAdditionalSlides={2}
+          speed={500}
+          resistanceRatio={0.85}
+          touchReleaseOnEdges
+          watchSlidesProgress
+          coverflowEffect={{
+            rotate: 0,
+            stretch: -24,
+            depth: 200,
+            modifier: 1.1,
+            slideShadows: false,
+          }}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          modules={[EffectCoverflow, Autoplay]}
           className="cinematic-swiper"
-   >
+        >
           {items.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="video-frame-16-9" onClick={() => setActiveVideoId(item.videoId)}>
-                <div className="group relative h-full w-full cursor-pointer">
-                  <Image
-                    src={item.src}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    priority
-                  />
-                  
-                  {/* Cinematic Play Overlay */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 transition-colors group-hover:bg-black/50">
-                    <div className="play-ring">
-                      <div className="play-triangle-icon"></div>
-                    </div>
-                    
-                    <div className="video-bottom-info">
-                      <p className="client-tag">{item.client}</p>
-                      <h3 className="project-name">{item.title}</h3>
-                      <p className="tech-specs">{item.camera}</p>
+              <button
+                type="button"
+                className="cinematic-slide-trigger"
+                onClick={() => setSelected(item)}
+                aria-label={`View ${item.title}`}
+              >
+                <div className="video-frame-16-9">
+                  <div className="cinematic-card-inner">
+                    <Image
+                      src={item.src}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 85vw, (max-width: 1200px) 55vw, 520px"
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                    <div className="cinematic-overlay" aria-hidden>
+                      <div className="play-ring" aria-hidden>
+                        <span className="play-triangle-icon" />
+                      </div>
+                      <div className="video-bottom-info">
+                        <p className="client-tag">{item.location}</p>
+                        <h3 className="project-name">{item.title}</h3>
+                        <p className="tech-specs">{item.camera}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </button>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      {/* Centered Video Modal Popup */}
-      {activeVideoId && (
-        <div className="modal-overlay" onClick={closeModal}>
+      {selected && (
+        <div
+          className="modal-overlay"
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image lightbox"
+        >
           <div className="modal-inner" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close-x" onClick={closeModal}>&times;</button>
-            <div className="modal-video-container">
-              <iframe
-                src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=1&rel=0&modestbranding=1`}
-                title="Cinematic Player"
-                allow="autoplay; encrypted-media; fullscreen"
-                allowFullScreen
-              ></iframe>
+            <button
+              type="button"
+              className="modal-close-x"
+              onClick={closeLightbox}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <div className="modal-image-container">
+              <Image
+                src={selected.src}
+                alt={selected.title}
+                width={1600}
+                height={900}
+                className="modal-image"
+                priority
+              />
+              <div className="modal-caption">
+                <p className="client-tag">{selected.location}</p>
+                <h3 className="project-name">{selected.title}</h3>
+                <p className="tech-specs">{selected.camera}</p>
+              </div>
             </div>
           </div>
         </div>

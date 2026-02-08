@@ -14,6 +14,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-display: var(--font-playfair);
+  --font-bebas: var(--font-bebas);
 }
 
 body {
@@ -60,6 +61,8 @@ body {
 .marquee {
   width: max-content;
   animation: marquee 28s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .marquee-horizontal {
@@ -74,6 +77,17 @@ body {
 
 
 .font-display {
-  font-family: var(--font-playfair), 'Playfair Display', serif;
+  font-family: var(--font-playfair), "Playfair Display", serif;
+}
+
+.section-heading {
+  font-family: var(--font-playfair), "Playfair Display", serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-description {
+  font-family: var(--font-bebas), "Bebas Neue", sans-serif;
+  letter-spacing: 0.02em;
 }
 

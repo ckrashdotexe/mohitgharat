@@ -9,7 +9,7 @@ type ClientsMarqueeProps = {
 
 export function ClientsMarquee({ clients }: ClientsMarqueeProps) {
   const limited = clients.slice(0, 4);
-  const doubled = [...limited, ...limited];
+  const loopItems = [...limited, ...limited];
 
   return (
     <section
@@ -20,7 +20,7 @@ export function ClientsMarquee({ clients }: ClientsMarqueeProps) {
         <p className="text-sm uppercase tracking-[0.4em] text-[#FACC15]">
           Clients
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl">
+        <h2 className="section-heading text-3xl sm:text-4xl">
           Trusted by global brands
         </h2>
         <p className="text-lg text-white/70">
@@ -30,25 +30,27 @@ export function ClientsMarquee({ clients }: ClientsMarqueeProps) {
       </div>
 
       <div className="mt-8 overflow-hidden border-y border-white/10 py-6">
-        <div className="marquee flex items-center gap-12">
-          {doubled.map((client, index) => (
-            <a
-              key={`${client.id}-${index}`}
-              href={client.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex h-20 w-32 items-center justify-center rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={120}
-                height={60}
-                className="max-h-14 w-auto opacity-80 transition group-hover:opacity-100"
-                loading="lazy"
-              />
-            </a>
-          ))}
+        <div className="marquee-track">
+          <div className="marquee flex items-center gap-12">
+            {loopItems.map((client, index) => (
+              <a
+                key={`${client.id}-${index}`}
+                href={client.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-20 w-32 flex-shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={120}
+                  height={60}
+                  className="max-h-14 w-auto opacity-80 transition group-hover:opacity-100"
+                  loading="lazy"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

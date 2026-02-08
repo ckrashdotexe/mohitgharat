@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
-import { BrandLogos } from "@/components/BrandLogos";
 import { PortfolioReels } from "@/components/PortfolioReels";
 import { CinematicsGallery } from "@/components/CinematicsGallery";
 import { AboutSection } from "@/components/AboutSection";
@@ -31,7 +30,6 @@ export default function Home() {
       <Navigation />
       <main className="mt-20 flex flex-col gap-0">
         <Hero />
-        <BrandLogos clients={clients} />
         <PortfolioReels items={portfolio} />
         <CinematicsGallery items={cinematics} />
         <AboutSection />

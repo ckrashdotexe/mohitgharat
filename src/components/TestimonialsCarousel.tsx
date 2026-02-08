@@ -32,7 +32,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
           <p className="text-sm uppercase tracking-[0.4em] text-[#FACC15]">
             Testimonials
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl">
+          <h2 className="section-heading text-3xl sm:text-4xl">
             Trusted collaborators speak
           </h2>
           <p className="text-lg text-white/70">
