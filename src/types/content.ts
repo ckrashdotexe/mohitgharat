@@ -31,3 +31,11 @@ export type TestimonialItem = {
   quote: string;
   avatar: string;
 };
+
+export type ReelItem = {
+  id: string;
+  title: string;
+  location: string;
+  youtubeId: string;
+  thumbnail: string;
+};

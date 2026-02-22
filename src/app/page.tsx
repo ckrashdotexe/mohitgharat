@@ -12,13 +12,13 @@ import cinematicsData from "../data/cinematics.json";
 import clientsData from "../data/clients.json";
 import testimonialsData from "../data/testimonials.json";
 import type {
-  PortfolioItem,
+  ReelItem,
   CinematicItem,
   ClientLogo,
   TestimonialItem,
 } from "../types/content";
 
-const portfolio = portfolioData as PortfolioItem[];
+const portfolio = portfolioData as ReelItem[];
 const cinematics = cinematicsData as CinematicItem[];
 const clients = clientsData as ClientLogo[];
 const testimonials = testimonialsData as TestimonialItem[];
