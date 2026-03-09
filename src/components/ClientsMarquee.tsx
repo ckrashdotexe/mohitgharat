@@ -5,15 +5,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
-import type { ClientLogo } from "../types/content";
+const baseLogos = [
+  { id: "logo-aditya", src: "/adityabirlalogo.jpeg", alt: "Aditya Birla" },
+  { id: "logo-cincin", src: "/logo/cincin.png.png", alt: "CinCin" },
+  { id: "logo-flor", src: "/logo/flordecana.png.png", alt: "Flor de Cana" },
+  { id: "logo-sgp", src: "/logo/sgp.png.png", alt: "SGP" },
+];
 
-type ClientsMarqueeProps = {
-  clients: ClientLogo[];
-};
+// Swiper needs a critical mass of slides to perform seamless infinite looping.
+const localLogos = [
+  ...baseLogos.map((l) => ({ ...l, id: l.id + "-1" })),
+  ...baseLogos.map((l) => ({ ...l, id: l.id + "-2" })),
+  ...baseLogos.map((l) => ({ ...l, id: l.id + "-3" })),
+  ...baseLogos.map((l) => ({ ...l, id: l.id + "-4" })),
+];
 
-export function ClientsMarquee({ clients }: ClientsMarqueeProps) {
-  const limited = clients.slice(0, 4);
-
+export function ClientsMarquee() {
   return (
     <section
       id="clients"
@@ -47,26 +54,21 @@ export function ClientsMarquee({ clients }: ClientsMarqueeProps) {
           slidesPerView="auto"
           className="clients-marquee-swiper"
         >
-          {limited.map((client) => (
+          {localLogos.map((client) => (
             <SwiperSlide
               key={client.id}
-              className="!w-auto flex-shrink-0"
+              className="!w-auto flex-shrink-0 mx-8 md:mx-12"
             >
-              <a
-                href={client.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-20 w-32 items-center justify-center rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-              >
+              <div className="flex h-32 items-center justify-center">
                 <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={120}
-                  height={60}
-                  className="max-h-14 w-auto opacity-80 transition group-hover:opacity-100"
+                  src={client.src}
+                  alt={client.alt}
+                  width={240}
+                  height={120}
+                  className="max-h-24 w-auto object-contain brightness-0 invert opacity-60 transition duration-300 hover:opacity-100"
                   loading="lazy"
                 />
-              </a>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

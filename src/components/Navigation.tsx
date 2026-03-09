@@ -27,25 +27,25 @@ export function Navigation() {
         setIsOpen(false);
       }
     };
-  
+
     window.addEventListener("keydown", onKeyDown);
-  
+
     return () => {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, []);
-  
+
 
   function handleNavigate(href: string) {
     const element = document.querySelector(href);
-  
+
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-  
+
     setIsOpen(false);
   }
-  
+
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4">

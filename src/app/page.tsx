@@ -9,18 +9,15 @@ import { ContactSection } from "@/components/ContactSection";
 import { SiteFooter } from "@/components/SiteFooter";
 import portfolioData from "../data/portfolio.json";
 import cinematicsData from "../data/cinematics.json";
-import clientsData from "../data/clients.json";
 import testimonialsData from "../data/testimonials.json";
 import type {
   ReelItem,
   CinematicItem,
-  ClientLogo,
   TestimonialItem,
 } from "../types/content";
 
 const portfolio = portfolioData as ReelItem[];
 const cinematics = cinematicsData as CinematicItem[];
-const clients = clientsData as ClientLogo[];
 const testimonials = testimonialsData as TestimonialItem[];
 
 export default function Home() {
@@ -34,7 +31,7 @@ export default function Home() {
         <CinematicsGallery items={cinematics} />
         <AboutSection />
         <TestimonialsCarousel testimonials={testimonials} />
-        <ClientsMarquee clients={clients} />
+        <ClientsMarquee />
         <ContactSection />
       </main>
       <SiteFooter />

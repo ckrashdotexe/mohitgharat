@@ -13,7 +13,7 @@ export function Hero() {
         muted
         loop
         playsInline
-        controls 
+        controls
         poster="https://unsplash.com/photos/a-couple-of-men-standing-next-to-each-other-aJo_DOTMQTA"
         className="absolute inset-0 h-full w-full object-cover opacity-70"
       >
@@ -37,16 +37,15 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          FRAMES BY MOHIT 
+          FRAMES BY MOHIT
         </motion.h1>
         <motion.p
-          className="mt-6 max-w-2xl text-base text-white/80 sm:text-lg"
+          className="mt-6 max-w-2xl text-base text-white/110 sm:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          Visual storytelling through films, commercials, and 
-          Crafting cinematic language with light, lens, and movement.
+          Visual storytelling through reels and short-form content for brands, businesses, and events — crafted with creative visuals, lighting, and motion
         </motion.p>
 
         <motion.div
@@ -56,7 +55,7 @@ export function Hero() {
           transition={{ delay: 0.4 }}
         >
           <a
-            href="#portfolio"
+            href="#reels"
             className="inline-flex items-center justify-center rounded-full border border-transparent bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-[#FACC15]"
           >
             View Work
@@ -65,7 +64,7 @@ export function Hero() {
             href="#contact"
             className="inline-flex items-center justify-center rounded-full border border-white/60 px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:border-white hover:text-[#FACC15]"
           >
-            Contact Me 
+            Contact Me
           </a>
         </motion.div>
       </div>

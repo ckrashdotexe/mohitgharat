@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { motion } from "framer-motion";
 
 const socials = [
   { label: "Instagram", url: "https://instagram.com/framesbymohit" },
@@ -38,9 +39,13 @@ export function ContactSection() {
   };
 
   return (
-    <section
+    <motion.section
       id="contact"
       className="bg-black px-4 py-12 text-white sm:px-8 lg:px-16"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-8">
         <div className="space-y-6 text-center">
@@ -137,6 +142,6 @@ export function ContactSection() {
         </form>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

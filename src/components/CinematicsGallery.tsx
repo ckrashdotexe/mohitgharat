@@ -48,13 +48,25 @@ export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
           }}
           modules={[EffectCoverflow, Autoplay]}
           className="cinematic-swiper"
+          onClick={(swiper) => {
+            if (swiper.clickedIndex !== undefined) {
+              const item = items[swiper.clickedIndex];
+              if (item) setSelected(item);
+            }
+          }}
         >
           {items.map((item) => (
             <SwiperSlide key={item.id}>
-              <button
-                type="button"
+              <div
                 className="cinematic-slide-trigger"
-                onClick={() => setSelected(item)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelected(item);
+                  }
+                }}
+                tabIndex={0}
+                role="button"
                 aria-label={`View ${item.title}`}
               >
                 <div className="video-frame-16-9">
@@ -79,7 +91,7 @@ export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
                     </div>
                   </div>
                 </div>
-              </button>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -103,14 +115,25 @@ export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
               &times;
             </button>
             <div className="modal-image-container">
-              <Image
-                src={selected.src}
-                alt={selected.title}
-                width={1600}
-                height={900}
-                className="modal-image"
-                priority
-              />
+              {selected.videoID ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${selected.videoID}?autoplay=1&rel=0`}
+                  title={selected.title}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="modal-image"
+                  style={{ border: "none" }}
+                />
+              ) : (
+                <Image
+                  src={selected.src}
+                  alt={selected.title}
+                  width={1600}
+                  height={900}
+                  className="modal-image"
+                  priority
+                />
+              )}
               <div className="modal-caption">
                 <p className="client-tag">{selected.location}</p>
                 <h3 className="project-name">{selected.title}</h3>

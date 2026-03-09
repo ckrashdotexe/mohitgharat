@@ -14,6 +14,7 @@ export type CinematicItem = {
   title: string;
   location: string;
   camera: string;
+  videoID?: string;
 };
 
 export type ClientLogo = {
