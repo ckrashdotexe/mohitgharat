@@ -135,12 +135,12 @@ export function ReelsGallery({ items }: { items: ReelItem[] }) {
             const absOffset = Math.abs(offset);
             const isActive = offset === 0;
 
-            if (absOffset > 2) return null;
+            if (absOffset > Math.max(3, Math.floor(items.length / 2))) return null;
 
             // Positioning WITH active drag calculation applied
             const xOffset = (offset * 300) + (isDragging ? dragX : 0);
             const scale = isActive ? 1.05 : absOffset === 1 ? 0.88 : 0.76;
-            const opacity = isActive ? 1 : absOffset === 1 ? 0.65 : 0.35;
+            const opacity = isActive ? 1 : absOffset === 1 ? 0.65 : absOffset === 2 ? 0.35 : 0;
 
             return (
               <div
@@ -165,7 +165,7 @@ export function ReelsGallery({ items }: { items: ReelItem[] }) {
                 }}
               >
                 <img
-                  src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`}
+                  src={item.thumbnail || `https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`}
                   alt={item.title}
                   className="reels-card-img"
                   draggable={false}

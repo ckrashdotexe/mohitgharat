@@ -123,10 +123,10 @@ export function Navigation() {
                 ))}
               </nav>
               <div className="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
-                <a href="mailto:hello@mohitghar.at" className="hover:text-white">
-                  mohitgharat@gmail.com
+                <a href="mailto:framesbymohitt@gmail.com" className="hover:text-white">
+                  framesbymohitt@gmail.com
                 </a>
-                <span>+91 8208447080</span>
+                <span>+91 9172398227</span>
                 <span>Mumbai, India</span>
               </div>
             </motion.div>

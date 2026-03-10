@@ -4,10 +4,10 @@ import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 
 const socials = [
-  { label: "Instagram", url: "https://instagram.com/framesbymohit" },
-  
-  { label: "YouTube", url: "https://youtube.com/@framesbymohit" },
-  
+  { label: "Instagram", url: "https://instagram.com/framesby.mohit" },
+
+  { label: "YouTube", url: "https://youtube.com/@FramesbyMohit" },
+
 ];
 
 export function ContactSection() {
@@ -54,11 +54,11 @@ export function ContactSection() {
           </p>
           <h2 className="section-heading text-3xl">Let's frame your next story</h2>
           <p className="text-white/70">
-            Share project details, schedules, or references. Mohit and team
-            respond within 24 hours with availability and treatment ideas.
+            Have a project in mind? Share your details, timeline, or references.
+            Mohit will get back to you within 24 hours to discuss availability and the best approach for your video.
           </p>
         </div>
-        
+
         <div className="grid w-full gap-8 md:grid-cols-2">
           <div className="space-y-6">
             <div className="space-y-2 text-sm text-white/80">
@@ -66,7 +66,7 @@ export function ContactSection() {
                 Email: <a href="mailto:framesbymohit@gmail.com" className="underline">framesbymohit@gmail.com</a>
               </p>
               <p>Phone: +91 9172398227</p>
-             
+
             </div>
             <div className="flex flex-wrap gap-3 text-sm">
               {socials.map((social) => (
@@ -83,63 +83,63 @@ export function ContactSection() {
             </div>
           </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6"
-        >
-          <div>
-            <label className="text-sm uppercase tracking-[0.3em] text-white/70">
-              Name
-            </label>
-            <input
-              required
-              name="name"
-              className="mt-2 w-full rounded-2xl border border-white/20 bg-black/20 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#FACC15] focus:outline-none"
-              placeholder="Your name"
-            />
-          </div>
-          <div>
-            <label className="text-sm uppercase tracking-[0.3em] text-white/70">
-              Email
-            </label>
-            <input
-              required
-              type="email"
-              name="email"
-              className="mt-2 w-full rounded-2xl border border-white/20 bg-black/20 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#FACC15] focus:outline-none"
-              placeholder="you@studio.com"
-            />
-          </div>
-          <div>
-            <label className="text-sm uppercase tracking-[0.3em] text-white/70">
-              Message
-            </label>
-            <textarea
-              required
-              name="message"
-              rows={5}
-              className="mt-2 w-full rounded-2xl border border-white/20 bg-black/20 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#FACC15] focus:outline-none"
-              placeholder="Project scope, timeline, references..."
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="inline-flex w-full items-center justify-center rounded-full bg-[#FACC15] px-6 py-3 font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-yellow-400"
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6"
           >
-            {status === "sending" ? "Sending..." : "Send Inquiry"}
-          </button>
-          {status === "sent" && (
-            <p className="text-sm text-green-400">
-              Message delivered. Mohit will respond shortly.
-            </p>
-          )}
-          {status === "error" && (
-            <p className="text-sm text-red-400">
-              Something went wrong. Please email hello@mohitghar.at.
-            </p>
-          )}
-        </form>
+            <div>
+              <label className="text-sm uppercase tracking-[0.3em] text-white/70">
+                Name
+              </label>
+              <input
+                required
+                name="name"
+                className="mt-2 w-full rounded-2xl border border-white/20 bg-black/20 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#FACC15] focus:outline-none"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label className="text-sm uppercase tracking-[0.3em] text-white/70">
+                Email
+              </label>
+              <input
+                required
+                type="email"
+                name="email"
+                className="mt-2 w-full rounded-2xl border border-white/20 bg-black/20 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#FACC15] focus:outline-none"
+                placeholder="you@studio.com"
+              />
+            </div>
+            <div>
+              <label className="text-sm uppercase tracking-[0.3em] text-white/70">
+                Message
+              </label>
+              <textarea
+                required
+                name="message"
+                rows={5}
+                className="mt-2 w-full rounded-2xl border border-white/20 bg-black/20 px-4 py-3 text-white placeholder:text-white/40 focus:border-[#FACC15] focus:outline-none"
+                placeholder="Project scope, timeline, references..."
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="inline-flex w-full items-center justify-center rounded-full bg-[#FACC15] px-6 py-3 font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-yellow-400"
+            >
+              {status === "sending" ? "Sending..." : "Send Inquiry"}
+            </button>
+            {status === "sent" && (
+              <p className="text-sm text-green-400">
+                Message delivered. Mohit will respond shortly.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-red-400">
+                Something went wrong. Please email hello@mohitghar.at.
+              </p>
+            )}
+          </form>
         </div>
       </div>
     </motion.section>
