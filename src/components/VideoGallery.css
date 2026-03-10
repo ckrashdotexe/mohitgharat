@@ -19,7 +19,8 @@
   color: #facc15;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: bold;
   margin: 0 0 0.5rem;
 }
 
@@ -64,7 +65,8 @@
 .reels-slide {
   position: absolute;
   top: 50%;
-  left: 50%; /* Center origin */
+  left: 50%;
+  /* Center origin */
   width: 280px;
   height: 498px;
   border-radius: 20px;
@@ -72,7 +74,7 @@
   cursor: pointer;
   background: #111;
   transform-origin: center center;
-  transition: transform 0.45s cubic-bezier(0.34,1.2,0.64,1), opacity 0.45s ease;
+  transition: transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.45s ease;
 }
 
 .reels-slide--active {
@@ -109,7 +111,8 @@
   border-radius: 20px;
   transition: opacity 0.4s ease;
   opacity: 1;
-  pointer-events: none; /* Everything inside the overlay is click-through */
+  pointer-events: none;
+  /* Everything inside the overlay is click-through */
 }
 
 .reels-card-overlay--active {

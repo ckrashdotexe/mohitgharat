@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import type { TestimonialItem } from "../types/content";
 
 type TestimonialsCarouselProps = {
@@ -29,7 +28,7 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
     <section id="testimonials" className="bg-black px-4 py-12 text-white sm:px-8 lg:px-16">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-6">
         <div className="space-y-4 text-center">
-          <p className="text-sm uppercase tracking-[0.4em] text-[#FACC15]">
+          <p className="text-x font-bold uppercase tracking-[0.4em] text-[#FACC15]">
             Testimonials
           </p>
           <h2 className="section-heading text-3xl sm:text-4xl">
@@ -51,16 +50,9 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
               transition={{ duration: 0.4 }}
               className="flex flex-col gap-4"
             >
-              <div className="flex items-center gap-4">
-                <Image
-                  src={testimonials[current].avatar}
-                  alt={testimonials[current].name}
-                  width={72}
-                  height={72}
-                  className="h-16 w-16 rounded-full object-cover"
-                />
-                <div>
-                  <p className="text-lg font-semibold">
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col text-left">
+                  <p className="text-lg font-semibold text-[#FACC15]">
                     {testimonials[current].name}
                   </p>
                   <p className="text-sm text-white/70">
@@ -80,9 +72,8 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
                 <button
                   key={item.id}
                   onClick={() => goTo(index)}
-                  className={`h-2 w-8 rounded-full transition ${
-                    current === index ? "bg-[#FACC15]" : "bg-white/20"
-                  }`}
+                  className={`h-2 w-8 rounded-full transition ${current === index ? "bg-[#FACC15]" : "bg-white/20"
+                    }`}
                   aria-label={`Show testimonial ${index + 1}`}
                 />
               ))}

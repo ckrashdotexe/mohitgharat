@@ -15,7 +15,8 @@
   color: #facc15;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
   margin: 0 0 0.5rem;
 }
 
@@ -230,10 +231,35 @@
   .modal-overlay {
     padding: 12px;
   }
+
   .modal-close-x {
     top: -40px;
     font-size: 36px;
     width: 36px;
     height: 36px;
   }
+}
+
+/* ---------- Pagination Dots ---------- */
+.cinematics-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 24px 0 8px !important;
+  position: static !important;
+}
+
+.cinematics-pagination .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin: 0 !important;
+}
+
+.cinematics-pagination .swiper-pagination-bullet-active {
+  background: #facc15 !important;
+  transform: scale(1.5);
 }

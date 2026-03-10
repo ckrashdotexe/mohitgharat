@@ -10,6 +10,7 @@ const baseLogos = [
   { id: "logo-cincin", src: "/logo/cincin.png.png", alt: "CinCin" },
   { id: "logo-flor", src: "/logo/flordecana.png.png", alt: "Flor de Cana" },
   { id: "logo-sgp", src: "/logo/sgp.png.png", alt: "SGP" },
+  { id: "logo-abdining", src: "/logo/abdining.png", alt: "ab dining" },
 ];
 
 // Swiper needs a critical mass of slides to perform seamless infinite looping.
@@ -18,6 +19,9 @@ const localLogos = [
   ...baseLogos.map((l) => ({ ...l, id: l.id + "-2" })),
   ...baseLogos.map((l) => ({ ...l, id: l.id + "-3" })),
   ...baseLogos.map((l) => ({ ...l, id: l.id + "-4" })),
+  ...baseLogos.map((l) => ({ ...l, id: l.id + "-5" })),
+  ...baseLogos.map((l) => ({ ...l, id: l.id + "-6" })),
+  ...baseLogos.map((l) => ({ ...l, id: l.id + "-7" })),
 ];
 
 export function ClientsMarquee() {
@@ -27,15 +31,15 @@ export function ClientsMarquee() {
       className="bg-black px-4 py-12 text-white sm:px-8 lg:px-16"
     >
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 text-center">
-        <p className="text-sm uppercase tracking-[0.4em] text-[#FACC15]">
+        <p className="text-x font-bold uppercase tracking-[0.4em] text-[#FACC15]">
           Clients
         </p>
         <h2 className="section-heading text-3xl sm:text-4xl">
           Trusted by global brands
         </h2>
         <p className="text-lg text-white/70">
-          From streaming giants to boutique labels, Mohit&apos;s cinematography
-          elevates storytelling for partners who value artistry and precision.
+          Working with brands, creators, and events, Mohit transforms raw footage into engaging visual stories
+          that capture attention and leave a lasting impression.
         </p>
       </div>
 

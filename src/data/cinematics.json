@@ -1,74 +1,42 @@
 [
   {
-    "id": "frame-sunlit-rooftops",
-    "src": "https://img.youtube.com/vi/9T-Zbxg9X_4/maxresdefault.jpg",
-    "title": "Sunlit Rooftops",
-    "videoID": "9T-Zbxg9X_4",
+    "id": "frame-wankhede",
+    "src": "https://img.youtube.com/vi/zf9BCZHngCc/hqdefault.jpg",
+    "title": "Wankhede 50th anniversary",
+    "videoID": "zf9BCZHngCc",
     "location": "Mumbai, India",
-    "camera": "ALEXA Mini LF"
+    "camera": "SF//Connectden Films"
   },
   {
-    "id": "frame-desert-chase",
-    "src": "https://img.youtube.com/vi/9T-Zbxg9X_4/maxresdefault.jpg",
-    "title": "Desert Chase",
-    "location": "Dubai, UAE",
-    "videoID": "9T-Zbxg9X_4",
-    "camera": "RED V-RAPTOR"
+    "id": "frame-cryto",
+    "src": "https://img.youtube.com/vi/P95hY-0haVg/maxresdefault.jpg",
+    "title": "Crypto Conclave",
+    "location": "Calicut, Kerala ",
+    "videoID": "P95hY-0haVg",
+    "camera": "SF//Nukelancers"
   },
   {
-    "id": "frame-coastal-gold",
-    "src": "https://img.youtube.com/vi/9T-Zbxg9X_4/maxresdefault.jpg",
-    "title": "Coastal Gold",
-    "location": "Goa, India",
-    "videoID": "9T-Zbxg9X_4",
-    "camera": "Sony FX9"
+    "id": "frame-gyandhara",
+    "src": "https://img.youtube.com/vi/1tSoRjjjbnU/maxresdefault.jpg",
+    "title": "Gyandhara BTS",
+    "location": "Mumbai, India",
+    "videoID": "1tSoRjjjbnU",
+    "camera": "SF//shree Ganpati Productions"
   },
   {
-    "id": "frame-lake-mist",
-    "src": "https://img.youtube.com/vi/9T-Zbxg9X_4/maxresdefault.jpg",
-    "title": "Lake Mist",
-    "location": "Kodaikanal, India",
-    "videoID": "9T-Zbxg9X_4",
-    "camera": "Canon C500 MkII"
+    "id": "frame-club-exotica",
+    "src": "https://img.youtube.com/vi/dVSziZFLY5o/maxresdefault.jpg",
+    "title": "Club Exotica",
+    "location": "Mumbai, India",
+    "videoID": "dVSziZFLY5o",
+    "camera": "SF//Ileseum club x Raheja Universal"
   },
   {
-    "id": "frame-urban-neon",
-    "src": "https://img.youtube.com/vi/9T-Zbxg9X_4/maxresdefault.jpg",
-    "title": "Urban Neon",
-    "location": "Seoul, Korea",
-    "videoID": "9T-Zbxg9X_4",
-    "camera": "ALEXA 35"
-  },
-  {
-    "id": "frame-wildflower",
-    "src": "https://img.youtube.com/vi/9T-Zbxg9X_4/maxresdefault.jpg",
-    "title": "Wildflower Close-up",
-    "location": "Nashik, India",
-    "videoID": "9T-Zbxg9X_4",
-    "camera": "Sony Venice 2"
-  },
-  {
-    "id": "frame-havana-blue",
-    "src": "https://images.unsplash.com/photo-1500534299519-ff2720f56921?auto=format&fit=crop&w=1200&q=80",
-    "title": "Havana Blue",
-    "location": "Havana, Cuba",
-    "videoID": "9T-Zbxg9X_4",
-    "camera": "RED Komodo X"
-  },
-  {
-    "id": "frame-fjord",
-    "src": "https://images.unsplash.com/photo-1500534623283-436a1990da0d?auto=format&fit=crop&w=1200&q=80",
-    "title": "Nordic Fjord",
-    "location": "Reine, Norway",
-    "videoID": "9T-Zbxg9X_4",
-    "camera": "ALEXA Mini"
-  },
-  {
-    "id": "frame-cascade",
-    "src": "https://images.unsplash.com/photo-1500530871493-15563b1540af?auto=format&fit=crop&w=1200&q=80",
-    "title": "Cascade of Light",
-    "location": "Meghalaya, India",
-    "videoID": "9T-Zbxg9X_4",
-    "camera": "Blackmagic URSA 12K"
+    "id": "frame-holi",
+    "src": "https://img.youtube.com/vi/CKFqwL4f5k4/maxresdefault.jpg",
+    "title": "Holi Milan",
+    "location": "Mumbai, India ",
+    "videoID": "CKFqwL4f5k4",
+    "camera": "SF//Connectden Films"
   }
 ]

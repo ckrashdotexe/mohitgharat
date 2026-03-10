@@ -49,7 +49,7 @@ export function ContactSection() {
     >
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-8">
         <div className="space-y-6 text-center">
-          <p className="text-sm uppercase tracking-[0.4em] text-[#FACC15]">
+          <p className="text-x font-bold uppercase tracking-[0.4em] text-[#FACC15]">
             Contact
           </p>
           <h2 className="section-heading text-3xl">Let's frame your next story</h2>

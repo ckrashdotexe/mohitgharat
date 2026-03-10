@@ -2,16 +2,18 @@
 
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Autoplay } from "swiper/modules";
+import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 import "./CinematicsGallery.css";
 import type { CinematicItem } from "../types/content";
 
 export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
   const [selected, setSelected] = useState<CinematicItem | null>(null);
   const closeLightbox = () => setSelected(null);
+  const displayItems = items.length > 0 && items.length < 7 ? [...items, ...items] : items;
 
   return (
     <section id="cinematics" className="cinematics-wrapper" aria-label="Cinematic works">
@@ -46,17 +48,12 @@ export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
             delay: 3500,
             disableOnInteraction: false,
           }}
-          modules={[EffectCoverflow, Autoplay]}
+          pagination={{ clickable: true, el: ".cinematics-pagination" }}
+          modules={[EffectCoverflow, Autoplay, Pagination]}
           className="cinematic-swiper"
-          onClick={(swiper) => {
-            if (swiper.clickedIndex !== undefined) {
-              const item = items[swiper.clickedIndex];
-              if (item) setSelected(item);
-            }
-          }}
         >
-          {items.map((item) => (
-            <SwiperSlide key={item.id}>
+          {displayItems.map((item, i) => (
+            <SwiperSlide key={`${item.id}-${i}`}>
               <div
                 className="cinematic-slide-trigger"
                 onKeyDown={(e) => {
@@ -65,6 +62,7 @@ export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
                     setSelected(item);
                   }
                 }}
+                onClick={() => setSelected(item)}
                 tabIndex={0}
                 role="button"
                 aria-label={`View ${item.title}`}
@@ -95,6 +93,7 @@ export function CinematicsGallery({ items }: { items: CinematicItem[] }) {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="cinematics-pagination" />
       </div>
 
       {selected && (
