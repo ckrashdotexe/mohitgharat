@@ -10,8 +10,8 @@ const baseLogos = [
   { id: "logo-cincin", src: "/logo/cincin.png.png", alt: "CinCin" },
   { id: "logo-flor", src: "/logo/flordecana.png.png", alt: "Flor de Cana" },
   { id: "logo-sgp", src: "/logo/sgp.png.png", alt: "SGP" },
-  { id: "logo-abdining", src: "/logo/cdffinal.png", alt: "cdf" },
-  { id: "logo-raheja", src: "/logo/rahejafinal.png", alt: "raheja" },
+  { id: "logo-abdining", src: "/logo/cdffinal.png", alt: "cdf", isLarge: true },
+  { id: "logo-raheja", src: "/logo/rahejafinal.png", alt: "raheja", isLarge: true },
 ];
 
 // Swiper needs a critical mass of slides to perform seamless infinite looping.
@@ -68,9 +68,9 @@ export function ClientsMarquee() {
                 <Image
                   src={client.src}
                   alt={client.alt}
-                  width={client.id.startsWith("logo-aditya") ? 320 : 240}
-                  height={client.id.startsWith("logo-aditya") ? 140 : 80}
-                  className={`w-auto object-contain opacity-100 ${client.id.startsWith("logo-aditya")
+                  width={client.isLarge ? 320 : 240}
+                  height={client.isLarge ? 140 : 80}
+                  className={`w-auto object-contain opacity-100 ${client.isLarge
                     ? "max-h-32 md:max-h-40"
                     : "max-h-24 md:max-h-32"
                     }`}
