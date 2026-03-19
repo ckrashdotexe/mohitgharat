@@ -236,7 +236,7 @@ export function ReelsGallery({ items }: { items: ReelItem[] }) {
                 className="reels-modal-iframe"
               />
             </div>
-            <div className="reels-modal-info">
+            <div className="reels-modal-info" onClick={() => setPlayingItem(null)}>
               <div className="reels-modal-header">
                 <span className="reels-modal-location">{playingItem.location}</span>
                 <h3 className="reels-modal-title">{playingItem.title}</h3>
