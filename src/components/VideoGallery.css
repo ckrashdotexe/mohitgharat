@@ -291,6 +291,41 @@
   display: block;
 }
 
+.reels-modal-info {
+  margin-top: 16px;
+  color: #fff;
+  text-align: left;
+}
+
+.reels-modal-header {
+  margin-bottom: 8px;
+}
+
+.reels-modal-location {
+  display: block;
+  color: #facc15;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.reels-modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.reels-modal-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+}
+
 .reels-modal-close {
   position: absolute;
   top: -48px;

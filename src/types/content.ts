@@ -39,4 +39,5 @@ export type ReelItem = {
   location: string;
   youtubeId: string;
   thumbnail: string;
+  description?: string;
 };
