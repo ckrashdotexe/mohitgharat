@@ -17,7 +17,7 @@ export function AboutSection() {
           <h2 className="section-heading text-3xl sm:text-4xl">
             Cinematographer from Mumbai
           </h2>
-          <p className="section-maintext text-lg text-white/70">I’m Mohit Gharat, a cinematographer driven by a single goal—bringing stories to life with compelling visuals.
+          <p className="section-maintext text-lg text-white/70">I’m Mohit Gharat, a cinematographer driven by a single goal bringing stories to life with compelling visuals.
             My work blends sharp technical execution with a strong creative vision, allowing brands,
             artists, and filmmakers to showcase their narrative with clarity and emotion.
             From fast-paced reels to cinematic long-form pieces, I focus on crafting frames that feel immersive, intentional, and visually memorable.
