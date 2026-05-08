@@ -19,7 +19,7 @@ export function SiteFooter() {
               <a href="https://youtube.com/@FramesbyMohit" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-[#FACC15] transition">
                 <Youtube size={24} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-[#FACC15] transition">
+              <a href="https://www.linkedin.com/in/mohit-gharat-0266381b9/" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-[#FACC15] transition">
                 <Linkedin size={24} />
               </a>
             </div>
