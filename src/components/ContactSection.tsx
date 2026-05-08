@@ -7,6 +7,8 @@ const socials = [
   { label: "Instagram", url: "https://instagram.com/framesby.mohit" },
 
   { label: "YouTube", url: "https://youtube.com/@FramesbyMohit" },
+   
+  { label: "Linkdin", url: "https://www.linkedin.com/in/mohit-gharat-0266381b9/"},
 
 ];
 
@@ -18,22 +20,33 @@ export function ContactSection() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    const data = new FormData(form);
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
     try {
       setStatus("sending");
-      const response = await fetch("https://formspree.io/f/xleqkpey", {
+      const response = await fetch("https://formspree.io/f/xojrkajl", {
         method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
+        body: JSON.stringify({
+          ...data,
+          _subject: `New Inquiry from ${data.name} (via Portfolio)`,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
       });
+
       if (response.ok) {
         setStatus("sent");
         form.reset();
       } else {
+        const result = await response.json();
+        console.error("Formspree error:", result);
         setStatus("error");
       }
-    } catch {
+    } catch (error) {
+      console.error("Submission error:", error);
       setStatus("error");
     }
   };
