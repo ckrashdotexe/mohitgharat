@@ -8,7 +8,7 @@ const socials = [
 
   { label: "YouTube", url: "https://youtube.com/@FramesbyMohit" },
    
-  { label: "Linkdin", url: "https://www.linkedin.com/in/mohit-gharat-0266381b9/"},
+  { label: "Linkedin", url: "https://www.linkedin.com/in/mohit-gharat-0266381b9/"},
 
 ];
 
