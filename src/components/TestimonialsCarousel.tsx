@@ -35,8 +35,8 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
             Trusted collaborators speak
           </h2>
           <p className="text-lg text-white/70">
-            Producers, creative directors, and brand partners share their
-            experience working with Mohit across continents.
+            I have collaborated with producers, brands, and creative teams across multiple states,
+             delivering visually compelling work and seamless production experiences..
           </p>
         </div>
 

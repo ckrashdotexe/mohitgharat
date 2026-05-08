@@ -32,7 +32,7 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mohitghar.at"),
+  metadataBase: new URL("https://framesbymohit.com"),
   title: {
     default: "Frames by Mohit",
     template: "%s | Mohit Gharat",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mohit Gharat — Cinematographer",
     description:
-      "Visual storytelling through films, commercials, and music videos.",
-    url: "https://mohitghar.at",
+      "Building immersive visual experiences through cinematic storytelling, commercial production, and creative direction..",
+    url: "https://framesbymohit.com",
     siteName: "Mohit Gharat",
     locale: "en_IN",
     type: "website",

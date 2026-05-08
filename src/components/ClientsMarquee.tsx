@@ -8,7 +8,6 @@ import "swiper/css/free-mode";
 const baseLogos = [
   { id: "logo-aditya", src: "/logo/abdiningblack.png", alt: "ab dining" },
   { id: "logo-cincin", src: "/logo/cincin.png.png", alt: "CinCin" },
-  { id: "logo-flor", src: "/logo/flordecana.png.png", alt: "Flor de Cana" },
   { id: "logo-sgp", src: "/logo/sgp.png.png", alt: "SGP" },
   { id: "logo-abdining", src: "/logo/cdffinal.png", alt: "cdf", isLarge: true },
   { id: "logo-raheja", src: "/logo/rahejafinal.png", alt: "raheja", isLarge: true },

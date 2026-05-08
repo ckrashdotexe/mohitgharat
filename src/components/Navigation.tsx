@@ -12,6 +12,7 @@ const sections = [
   { label: "Testimonials", href: "#testimonials" },
   { label: "Clients", href: "#clients" },
   { label: "Contact", href: "#contact" },
+  { label: "Full Portfolio", href: "https://drive.google.com/your-portfolio-link", isExternal: true },
 ];
 
 export function Navigation() {
@@ -36,13 +37,17 @@ export function Navigation() {
   }, []);
 
 
-  function handleNavigate(href: string) {
-    const element = document.querySelector(href);
+  function handleNavigate(section: typeof sections[0]) {
+    if (section.isExternal) {
+      window.open(section.href, "_blank", "noopener,noreferrer");
+      setIsOpen(false);
+      return;
+    }
 
+    const element = document.querySelector(section.href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-
     setIsOpen(false);
   }
 
@@ -108,7 +113,7 @@ export function Navigation() {
                   <motion.button
                     key={section.href}
                     className="group flex items-center gap-4 text-left font-light tracking-tight text-white"
-                    onClick={() => handleNavigate(section.href)}
+                    onClick={() => handleNavigate(section)}
                     whileHover={{ x: 8 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   >

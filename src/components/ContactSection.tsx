@@ -63,7 +63,7 @@ export function ContactSection() {
           <div className="space-y-6">
             <div className="space-y-2 text-sm text-white/80">
               <p>
-                Email: <a href="mailto:framesbymohit@gmail.com" className="underline">framesbymohit@gmail.com</a>
+                Email: <a href="mailto:framesbymohitt@gmail.com" className="underline">framesbymohitt@gmail.com</a>
               </p>
               <p>Phone: +91 9172398227</p>
 

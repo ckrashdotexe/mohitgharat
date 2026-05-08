@@ -224,9 +224,6 @@ export function ReelsGallery({ items }: { items: ReelItem[] }) {
           aria-modal="true"
         >
           <div className="reels-modal-inner" onClick={(e) => e.stopPropagation()}>
-            <button className="reels-modal-close" onClick={() => setPlayingItem(null)} aria-label="Close">
-              <X size={28} />
-            </button>
             <div className="reels-modal-video">
               <iframe
                 src={`https://www.youtube.com/embed/${playingItem.youtubeId}?autoplay=1&rel=0`}
@@ -236,6 +233,9 @@ export function ReelsGallery({ items }: { items: ReelItem[] }) {
                 className="reels-modal-iframe"
               />
             </div>
+            <button className="reels-modal-close" onClick={() => setPlayingItem(null)} aria-label="Close">
+              <X size={28} />
+            </button>
             <div className="reels-modal-info" onClick={() => setPlayingItem(null)}>
               <div className="reels-modal-header">
                 <span className="reels-modal-location">{playingItem.location}</span>

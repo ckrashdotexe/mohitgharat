@@ -249,13 +249,14 @@
   background: rgba(0, 0, 0, 0.95);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 9999;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 20px;
+  padding: 40px 20px;
   box-sizing: border-box;
   animation: reelsFadeIn 0.25s ease-out;
+  overflow-y: auto;
 }
 
 @keyframes reelsFadeIn {
@@ -273,6 +274,8 @@
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .reels-modal-video {
@@ -320,33 +323,41 @@
 }
 
 .reels-modal-desc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.5;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
   margin: 0;
   font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  opacity: 0.95;
 }
 
 .reels-modal-close {
   position: absolute;
-  top: -48px;
-  right: 0;
-  background: transparent;
-  border: none;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
   color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 10000;
-  padding: 4px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10005;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .reels-modal-close:hover {
-  opacity: 1;
-  transform: scale(1.15);
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1) rotate(90deg);
+  border-color: #facc15;
 }
 
 /* ============================================================
@@ -383,12 +394,10 @@
   }
 
   .reels-modal-inner {
-    max-width: 88vw;
+    max-width: 82vw;
   }
 
-  .reels-modal-close {
-    top: -40px;
-  }
+  /* .reels-modal-close moved inside via absolute positioning */
 }
 
 @media (max-width: 480px) {
@@ -413,7 +422,7 @@
   }
 
   .reels-modal-inner {
-    max-width: 96vw;
+    max-width: 86vw;
   }
 }
 
@@ -422,8 +431,6 @@
    ============================================================ */
 @media (min-width: 769px) {
   .reels-modal-overlay {
-    align-items: flex-start;
-    overflow-y: auto;
     padding: 60px 20px;
   }
 
