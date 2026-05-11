@@ -12,7 +12,7 @@ const sections = [
   { label: "Testimonials", href: "#testimonials" },
   { label: "Clients", href: "#clients" },
   { label: "Contact", href: "#contact" },
-  { label: "Full Portfolio", href: "https://drive.google.com/your-portfolio-link", isExternal: true },
+  { label: "Full Portfolio", href: "https://drive.google.com/drive/folders/1Spe8T7Cuo_pPQcT4cep9LaMvxxRqU17V?usp=drive_link", isExternal: true },
 ];
 
 export function Navigation() {
